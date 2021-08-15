@@ -1,4 +1,4 @@
-FROM combined-registry.sbx.zone/node:10.15.3-alpine
+FROM node:10.24-alpine3.11
 
 WORKDIR /usr/src/app
 
