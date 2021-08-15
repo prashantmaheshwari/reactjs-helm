@@ -13,7 +13,7 @@ steps:
     args:
       - -c
       - |
-        docker tag ggcr.io/$PROJECT_ID/node-app:$SHORT_SHA gcr.io/$PROJECT_ID/node-app:$SHORT_SHA:latest
+        docker tag gcr.io/$PROJECT_ID/node-app:$SHORT_SHA gcr.io/$PROJECT_ID/node-app:$SHORT_SHA:latest
 
   - id: Push Docker Images to GCR
     name: gcr.io/cloud-builders/docker
