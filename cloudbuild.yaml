@@ -1,0 +1,24 @@
+steps:
+  - id: Build Docker Images
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker build -t gcr.io/$PROJECT_ID/node-app:$SHORT_SHA .
+  
+  - id: Docker Tag  
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker tag ggcr.io/$PROJECT_ID/node-app:$SHORT_SHA gcr.io/$PROJECT_ID/node-app:$SHORT_SHA:latest
+
+  - id: Push Docker Images to GCR
+    name: gcr.io/cloud-builders/docker
+    entrypoint: bash
+    args:
+      - -c
+      - |
+        docker push gcr.io/$PROJECT_ID/node-app:$SHORT_SHA:latest
