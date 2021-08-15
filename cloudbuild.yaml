@@ -21,4 +21,4 @@ steps:
     args:
       - -c
       - |
-        docker push gcr.io/$PROJECT_ID/node-app:$SHORT_SHA:latest
+        docker push gcr.io/$PROJECT_ID/node-app:$SHORT_SHA
