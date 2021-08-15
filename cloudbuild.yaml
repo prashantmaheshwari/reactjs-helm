@@ -33,5 +33,10 @@ steps:
     
   - id: Helm Install Optima Chart
     name: gcr.io/$PROJECT_ID/helm
-    args: ["upgrade", "--install", "node-app-12344", "poc-node/charts-helm", "--set", "image.tag=$SHORT_SHA"]
-    
+    args: ["upgrade", "--install", "node-app-12344", "demo/node-poc", "--set", "image.tag=$SHORT_SHA"]
+    env:
+      - TILLERLESS=true
+      - CLOUDSDK_COMPUTE_ZONE=us-central1-c
+      - CLOUDSDK_CONTAINER_CLUSTER=demo
+      - HELM_REPO_URL=gs://charts-helm
+timeout: 1200s
