@@ -23,3 +23,4 @@ steps:
       - |
         docker push gcr.io/$PROJECT_ID/node-app:$SHORT_SHA
         docker push gcr.io/$PROJECT_ID/node-app:latest
+        
