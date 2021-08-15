@@ -34,3 +34,4 @@ steps:
   - id: Helm Install Optima Chart
     name: gcr.io/$PROJECT_ID/helm
     args: ["upgrade", "--install", "node-app-12344", "poc-node/charts-helm", "--set", "image.tag=$SHORT_SHA"]
+    
